@@ -3122,7 +3122,7 @@ client.once("ready", async (readyClient) => {
   await readyClient.application?.fetch().catch(() => null);
   setBrandIconURL(readyClient.user.displayAvatarURL({ extension: "png", size: 128 }));
   logger.info({ tag: readyClient.user.tag, guilds: readyClient.guilds.cache.size }, "Titan Labs is online");
-  readyClient.user.setPresence({ activities: [{ name: "Tyrones Keys", type: import_discord19.ActivityType.Watching }], status: "online" });
+  readyClient.user.setPresence({ activities: [{ name:"Tyrone Keys", type: import_discord19.ActivityType.Watching }], status: "online" });
   try {
     await deploySlashCommands();
   } catch (err) {
