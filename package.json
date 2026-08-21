@@ -1,5 +1,5 @@
 {
-  "name": "unity-labs-discord-bot",
+  "name": "Titan-labs-discord-bot",
   "version": "1.0.0",
   "description": "Titan Labs Discord moderation, community, ticket, transcript, and vehicle-key bot.",
   "main": "index.js",
