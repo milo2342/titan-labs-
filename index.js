@@ -381,7 +381,7 @@ var insertDiscordDmForwardEntrySchema = (0, import_drizzle_zod16.createInsertSch
 // lib/db/src/index.ts
 const { Pool } = require("pg");
 const { drizzle } = require("drizzle-orm/node-postgres");
-import * as schema_exports from "./schema";
+const schema_exports = require("./schema");
 
 let pool: Pool | null = null;
 let db: ReturnType<typeof drizzle> | null = null;
