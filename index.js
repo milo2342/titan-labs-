@@ -380,13 +380,34 @@ var insertDiscordDmForwardEntrySchema = (0, import_drizzle_zod16.createInsertSch
 
 // lib/db/src/index.ts
 var { Pool } = import_pg.default;
-if (!process.env.DATABASE_URL) {
-  throw new Error(
-    "DATABASE_URL must be set. Did you forget to provision a database?"
-  );
+import { Pool } from "pg";
+import { drizzle } from "drizzle-orm/node-postgres";
+import * as schema_exports from "./schema";
+
+let pool: Pool | null = null;
+let db: ReturnType<typeof drizzle> | null = null;
+
+export function getDb() {
+  if (!process.env.DATABASE_URL) {
+    return null;
+  }
+
+  if (!db) {
+    pool = new Pool({
+      connectionString: process.env.DATABASE_URL,
+    });
+
+    db = drizzle(pool, {
+      schema: schema_exports,
+    });
+  }
+
+  return db;
 }
-var pool = new Pool({ connectionString: process.env.DATABASE_URL });
-var db = (0, import_node_postgres.drizzle)(pool, { schema: schema_exports });
+
+export function hasDatabase() {
+  return Boolean(process.env.DATABASE_URL);
+}
 
 // artifacts/discord-bot/src/commands/moderation.ts
 var import_drizzle_orm = require("drizzle-orm");
