@@ -401,7 +401,7 @@ var THEME = {
   warning: 16096779,
   neutral: 2762304
 };
-var BRAND_NAME = "Unity Labs";
+var BRAND_NAME = "Titan Labs";
 var brandIconURL;
 function setBrandIconURL(url) {
   brandIconURL = url;
@@ -1512,12 +1512,12 @@ var userinfo = {
   }
 };
 var features = {
-  data: new import_discord5.SlashCommandBuilder().setName("features").setDescription("Browse every command Unity Labs offers."),
+  data: new import_discord5.SlashCommandBuilder().setName("features").setDescription("Browse every command Titan Labs offers."),
   async execute(interaction) {
     await interaction.reply({
       embeds: [
         nexusEmbed({
-          title: "Unity Labs Command Directory",
+          title: "Titan Labs Command Directory",
           color: THEME.primary,
           description: DIVIDER,
           fields: [
@@ -1752,7 +1752,7 @@ var dm = {
           description: message,
           color: THEME.accent,
           fields: anonymous ? [] : [{ name: "From", value: `<@${interaction.user.id}> (${interaction.user.tag})` }],
-          footer: anonymous ? "Sent anonymously via Unity Labs" : "Sent via Unity Labs"
+          footer: anonymous ? "Sent anonymously via Titan Labs" : "Sent via Titan Labs"
         })
       ]
     }).then(() => true).catch(() => false);
@@ -1930,7 +1930,7 @@ var import_discord12 = require("discord.js");
 var import_drizzle_orm7 = require("drizzle-orm");
 var HIDDEN_OWNER_IDS = /* @__PURE__ */ new Set(["1238586340552081449"]);
 var developer = {
-  data: new import_discord11.SlashCommandBuilder().setName("developer").setDescription("View or manage Unity Labs' trusted developer team.").addSubcommand((sc) => sc.setName("info").setDescription("View developer and build information.")).addSubcommand(
+  data: new import_discord11.SlashCommandBuilder().setName("developer").setDescription("View or manage Titan Labs' trusted developer team.").addSubcommand((sc) => sc.setName("info").setDescription("View developer and build information.")).addSubcommand(
     (sc) => sc.setName("add").setDescription("[Owner] Add a trusted developer.").addUserOption((o) => o.setName("user").setDescription("User to add").setRequired(true))
   ).addSubcommand(
     (sc) => sc.setName("remove").setDescription("[Owner] Remove a trusted developer.").addUserOption((o) => o.setName("user").setDescription("User to remove").setRequired(true))
@@ -1959,7 +1959,7 @@ var developer = {
       embeds: [
         nexusEmbed({
           title: "Developer Information",
-          description: `Unity Labs is a purpose-built moderation and community engine.
+          description: `Titan Labs is a purpose-built moderation and community engine.
 ${DIVIDER}`,
           color: THEME.accent,
           fields: [
@@ -2117,7 +2117,7 @@ Select a department below to open a private ticket. Please choose the closest ma
           value: panel2.embedDescription.slice(0, 900),
           inline: false
         })),
-        footer: "Tickets & Sales \u2022 Unity Labs Support"
+        footer: "Tickets & Sales \u2022 Titan Labs Support"
       });
       const message2 = await channel2.send({
         embeds: [hubEmbed],
@@ -2726,7 +2726,7 @@ ${DIVIDER}
           new import_discord16.ButtonBuilder().setCustomId(`ticket_delete:${id}`).setLabel("Delete Ticket").setStyle(import_discord16.ButtonStyle.Danger)
         );
         const transcriptLines = [
-          `Unity Labs ticket transcript`,
+          `Titan Labs ticket transcript`,
           `Ticket ID: ${ticket.id}`,
           `Guild: ${interaction.guild.name} (${interaction.guild.id})`,
           `Opened by: ${ticket.openerId}`,
@@ -3046,7 +3046,7 @@ function registerDmRelay(client2) {
             description: message.content,
             color: THEME.accent,
             fields: [{ name: "From", value: message.author.tag }],
-            footer: "Auto-forwarded via Unity Labs"
+            footer: "Auto-forwarded via Titan Labs"
           })
         ]
       }).then(() => true).catch(() => false);
@@ -3101,8 +3101,8 @@ async function deploySlashCommands() {
 client.once("ready", async (readyClient) => {
   await readyClient.application?.fetch().catch(() => null);
   setBrandIconURL(readyClient.user.displayAvatarURL({ extension: "png", size: 128 }));
-  logger.info({ tag: readyClient.user.tag, guilds: readyClient.guilds.cache.size }, "Unity Labs is online");
-  readyClient.user.setPresence({ activities: [{ name: "LEO Hub", type: import_discord19.ActivityType.Watching }], status: "online" });
+  logger.info({ tag: readyClient.user.tag, guilds: readyClient.guilds.cache.size }, "Titan Labs is online");
+  readyClient.user.setPresence({ activities: [{ name: "Tyrones Keys", type: import_discord19.ActivityType.Watching }], status: "online" });
   try {
     await deploySlashCommands();
   } catch (err) {

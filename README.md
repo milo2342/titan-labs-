@@ -1,6 +1,6 @@
-# Unity Labs Discord Bot
+# Titan Labs Discord Bot
 
-A standalone GitHub-ready build of the Unity Labs Discord bot. It runs from one bundled `index.js` file and keeps persistent configuration in PostgreSQL.
+A standalone GitHub-ready build of the Titan Labs Discord bot. It runs from one bundled `index.js` file and keeps persistent configuration in PostgreSQL.
 
 ## Files
 
@@ -25,7 +25,7 @@ The bot registers slash commands automatically at startup. Set `DISCORD_GUILD_ID
 
 ## Database
 
-`DATABASE_URL` must point to PostgreSQL. The bundled export expects the Unity Labs Discord tables to already exist. The original workspace contains the Drizzle schema and can push it with `pnpm --filter @workspace/db run push`; for a completely separate host, export the schema SQL from the original project before first launch.
+`DATABASE_URL` must point to PostgreSQL. The bundled export expects the Titan Labs Discord tables to already exist. The original workspace contains the Drizzle schema and can push it with `pnpm --filter @workspace/db run push`; for a completely separate host, export the schema SQL from the original project before first launch.
 
 ## Features
 
